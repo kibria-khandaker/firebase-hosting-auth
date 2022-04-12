@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import AutoLoginWithFirebase from '../AutoLoginWithFirebase/AutoLoginWithFirebase';
 import auth from '../firebase.init';
 import './Login.css';
@@ -9,7 +9,7 @@ const Login = () => {
     //-1--------------------
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     //-3--------------------
     const [
         signInWithEmailAndPassword,
@@ -29,9 +29,9 @@ const Login = () => {
         setPassword(event.target.value);
     }
     //-2b------
-    // if (user) {
-    //     navigate(from, { replace: true });
-    // }
+    if (user) {
+        navigate(from, { replace: true });
+    }
     //-2a------
     const handleUserSignIn = event => {
         event.preventDefault();

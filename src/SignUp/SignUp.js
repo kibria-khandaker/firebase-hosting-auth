@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../firebase.init';
 import AutoLoginWithFirebase from './../AutoLoginWithFirebase/AutoLoginWithFirebase';
 
@@ -12,7 +12,7 @@ const SignUp = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
 
-    // const navigate = useNavigate(); 
+    const navigate = useNavigate(); 
     
     //-3--------------------
     const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth);
@@ -41,9 +41,9 @@ const SignUp = () => {
         createUserWithEmailAndPassword(email, password);
     }
     //-4--------------------
-    // if (user) {
-    //     navigate('/home');
-    // }
+    if (user) {
+        navigate('/home');
+    }
 
     return (
         <div className='container'>
@@ -66,7 +66,7 @@ const SignUp = () => {
                         <input className='border-0 rounded w-50 my-3 ' type="submit" value="SignUp" />
                     </form>
                     <p className='new-account-link'>
-                        <b>Already have an account? <Link to='/login'> Login </Link></b>
+                        <b>Already have your account? <Link to='/login'> Login </Link></b>
                     </p>
 
                     <AutoLoginWithFirebase></AutoLoginWithFirebase>
