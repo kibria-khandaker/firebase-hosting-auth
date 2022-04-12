@@ -1,0 +1,31 @@
+header {
+  background-color: beige;
+}
+
+/* ----- MyMenuBar ----- */
+.nav-area {
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+}
+.nav-logo a {
+  font-size: 18px;
+  font-weight: 900;
+  text-decoration: none;
+}
+.nav-list a {
+  /* background-color: #ffffff99; */
+  margin-left: 10px;
+  color: #fff;
+  padding: 5px 15px;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.nav-list a:hover {
+  background-color: #484848;
+  color: #fff;
+}
