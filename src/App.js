@@ -7,6 +7,7 @@ import Login from "./Login/Login";
 import About from './Pages/About/About';
 import GetDiscount from "./Pages/GetDiscount/GetDiscount";
 import Home from './Pages/Home/Home';
+import NotFound from './Pages/NotFound/NotFound';
 import Shop from "./Pages/Products/Shop";
 import SignUp from "./SignUp/SignUp";
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/discount" element={ <GetDiscount/> } />
         <Route path="/login" element={ <Login/> } />
         <Route path="/signup" element={ <SignUp/> } />
+        <Route path="*" element={ <NotFound/> } />
       </Routes>
       <Footer></Footer>
     </div>
