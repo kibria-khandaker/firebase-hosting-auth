@@ -3,13 +3,13 @@ header {
 }
 
 /* ----- MyMenuBar ----- */
-.nav-area {
+/* .nav-area {
   padding-top: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 15px;
-}
+} */
 .nav-logo a {
   font-size: 18px;
   font-weight: 900;
@@ -17,7 +17,7 @@ header {
 }
 .nav-list a {
   /* background-color: #ffffff99; */
-  margin-left: 10px;
+  /* margin-left: 10px; */
   color: #fff;
   padding: 5px 15px;
   font-size: 16px;
@@ -29,3 +29,4 @@ header {
   background-color: #484848;
   color: #fff;
 }
+

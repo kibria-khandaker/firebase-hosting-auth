@@ -1,0 +1,31 @@
+.input-wrapper {
+    background: #1b4388;
+    background: linear-gradient(
+      25deg,
+      rgba(27, 67, 136, 1) 0%,
+      rgba(30, 144, 194, 1) 100%
+    );
+  }
+
+.login-auth {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    position: relative;
+  }
+  .login-auth img {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px; height: 32px;
+  }
+  .login-auth p{
+    position: absolute;
+    width: 80%;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+  }

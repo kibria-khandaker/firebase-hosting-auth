@@ -1,23 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import usePaintings from '../../hooks/usePaintings';
 import './Product.css';
 import Products from './Products';
 import SearchProducts from './SearchProducts';
 
 const Shop = () => {
-
-    const [paintings, setPaintings] = useState([]);
+    const [paintings, setPaintings] = usePaintings();
+  
     const [searchResults, setSearchResults] = useState([])
-  
-    useEffect(() => {
-      fetch('https://raw.githubusercontent.com/kibria-khandaker/my-api-data/main/fakeData.json')
-        .then(res => res.json())
-        .then(data => {
-          setPaintings(data)
-          // setSearchResults(data)
-        })
-    }, []);
-  
-    const handleSearchChange = (event) => {
+      const handleSearchChange = (event) => {
       const searchText = event.target.value;
       if (searchText === ''  ) {
         setSearchResults([])
@@ -30,6 +21,7 @@ const Shop = () => {
       const match = paintings.filter(paint => paint.name.toLowerCase().includes(searchText.toLowerCase()));
       setSearchResults(match);
     }
+    
   
     return (
       <div className='main-search-div'>

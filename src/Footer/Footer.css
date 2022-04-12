@@ -1,6 +1,11 @@
 footer {
-  background-color: beige;
-  padding:10px 50px;
+  margin-top: 60px;
+  background-color: #212529;
+  padding: 20px 50px;
+  text-align: center;
+}
+.footer-text {
+  color: #fff;
   text-align: center;
   display: flex;
   justify-content: center;
