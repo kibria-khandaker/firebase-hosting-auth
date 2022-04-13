@@ -4,13 +4,14 @@ import './App.css';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
 import Login from "./Login/Login";
+import RequireAuth from './Login/RequireAuth';
 import About from './Pages/About/About';
 import GetDiscount from "./Pages/GetDiscount/GetDiscount";
 import Home from './Pages/Home/Home';
 import NotFound from './Pages/NotFound/NotFound';
+import DetailsProduct from './Pages/Products/DetailsProduct';
 import Shop from "./Pages/Products/Shop";
 import SignUp from "./SignUp/SignUp";
-import RequireAuth from './Login/RequireAuth';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/details/:productId" element={<DetailsProduct />} />
         <Route path="/about" element={<About />} />
         <Route path="/discount" element={
           <RequireAuth>

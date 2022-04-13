@@ -1,8 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Products = ({ paintingData }) => {
-    // const {name,img,bullet,capacity,action,price}=gunData;
     const { id, name, img, category, seller, shipping, price } = paintingData;
+
+    const navigate = useNavigate();    
+    const singleItemsDetails = id =>{
+        navigate(`/details/${id}`)
+        // {paintingData}
+    }
+
     return (
         <div className='productCard_items'>
             <img src={img} alt="" />
@@ -12,6 +19,7 @@ const Products = ({ paintingData }) => {
             <p>Category : {category}</p>
             <p>Shipping : {shipping}</p>
             <p>Price : <b>{price}$</b></p>
+            <button onClick={()=>singleItemsDetails(id)} >See Details</button>
         </div>
     );
 };

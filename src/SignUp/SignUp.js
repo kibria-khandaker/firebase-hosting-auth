@@ -7,6 +7,7 @@ import AutoLoginWithFirebase from './../AutoLoginWithFirebase/AutoLoginWithFireb
 const SignUp = () => {
 
     //-1--------------------
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -17,6 +18,11 @@ const SignUp = () => {
     //-3--------------------
     const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth);
     //-2--------------------
+
+    const handleNameBlur = event => {
+        setName(event.target.value);
+    }
+    console.log(handleNameBlur);
     const handleEmailBlur = event => {
         setEmail(event.target.value);
     }
@@ -38,12 +44,14 @@ const SignUp = () => {
             return;
         }
         // react hook er theke neoa
-        createUserWithEmailAndPassword(email, password);
+        createUserWithEmailAndPassword(email, password)
+        .then(()=>navigate('/home'))
+        
     }
     //-4--------------------
-    if (user) {
-        navigate('/home');
-    }
+    // if (user) {
+    //     navigate('/home');
+    // }
 
     return (
         <div className='container'>
@@ -51,6 +59,12 @@ const SignUp = () => {
                 <div className='col-md-6 bg-info mx-auto py-5 px-5 min-vh-100'>
                     <h2 className='from-title'>Sign Up</h2>
                     <form onSubmit={handleCreateUser} className='my-form' >
+                        
+                        <div className="d-flex flex-column">
+                            <label htmlFor="name">Name</label>
+                            <input onBlur={handleNameBlur} className='border-0 rounded' type="text" name="name" id="" required />
+                        </div>
+
                         <div className="d-flex flex-column">
                             <label htmlFor="email">Email</label>
                             <input onBlur={handleEmailBlur} className='border-0 rounded' type="email" name="email" id="" required />
@@ -80,4 +94,4 @@ export default SignUp;
 
 // Problem need to solve ****************
 // how can send Name and Address ans Verification link to user email by using react hook
-// 
+//  error show for this reason   const navigate = useNavigate(); = Done

@@ -8,7 +8,7 @@ const AutoLoginWithFirebase = () => {
     return (
         <div>
             <fieldset className='border p-2 pt-3 pb-4 rounded'>
-                <legend className='float-none w-auto py-1 px-2 border border-5 border-light rounded-circle'>
+                <legend className='float-none w-auto py-1 px-2 border border-5  rounded-circle text-white'>
                     Or
                 </legend>
                 <div>

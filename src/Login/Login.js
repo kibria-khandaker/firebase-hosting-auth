@@ -29,13 +29,14 @@ const Login = () => {
         setPassword(event.target.value);
     }
     //-2b------
-    if (user) {
-        navigate(from, { replace: true });
-    }
+    // if (user) {
+    //     // navigate(from, { replace: true });
+    // }
     //-2a------
     const handleUserSignIn = event => {
         event.preventDefault();
         signInWithEmailAndPassword(email, password)
+        .then(()=>navigate(from, { replace: true }))
     }
     //---------------------
 
